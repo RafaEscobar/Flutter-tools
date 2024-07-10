@@ -18,7 +18,7 @@ class Dashboard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GeneralCard(
                   imageUrl: 'assets/images/animation.jpg',
@@ -30,8 +30,9 @@ class Dashboard extends StatelessWidget {
                 )
               ],
             ),
+            SizedBox(height: 20,),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GeneralCard(
                   imageUrl: 'assets/images/effects.jpg',
