@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 class GeneralCard extends StatefulWidget {
   final String cardText;
   final String imageUrl;
+  final VoidCallback? actionCard;
 
   const GeneralCard({
     required this.cardText,
     required this.imageUrl,
+    required this.actionCard,
     super.key
   });
 
@@ -19,14 +21,16 @@ class GeneralCard extends StatefulWidget {
 class _GeneralCardState extends State < GeneralCard > {
   bool isExpanded = false;
 
-  void expand() {
-    setState(() => isExpanded = !isExpanded );
+  void actionCard() async {
+      setState(() => isExpanded = !isExpanded );
+      await Future.delayed(const Duration(milliseconds: 100));
+      widget.actionCard!();
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => expand(),
+      onTap: () => actionCard(),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
         width: (isExpanded == false) ? 180 : 190,
