@@ -1,13 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:tools/widgets/general_card.dart';
 
 class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
+  const Dashboard({
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       drawerEnableOpenDragGesture: false,
-      body: Text('menu'),
+      body: Container(
+        alignment: Alignment.center,
+        color: Colors.blue,
+        child: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GeneralCard(
+                  imageUrl: 'assets/images/animation.jpg',
+                  cardText: 'Animaciones',
+                ),
+                GeneralCard(
+                  imageUrl: 'assets/images/text.jpg',
+                  cardText: 'Textos',
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GeneralCard(
+                  imageUrl: 'assets/images/effects.jpg',
+                  cardText: 'Efectos',
+                ),
+                GeneralCard(
+                  imageUrl: 'assets/images/static.jpg',
+                  cardText: 'Objetos en general',
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
